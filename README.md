@@ -1,5 +1,34 @@
 # fleet-management-service
 
+
+System requirements:
+
+- Java 8
+- Maven 3
+
+
+#Linux
+
+After checkout you fill find an executable named *fleetmanagement* in the root folder. 
+
+./fleetmanagement /home/apeglow/git/fleet-management-service/src/test/resources/example1.json
+./fleetmanagement /home/apeglow/git/fleet-management-service/src/test/resources/example2.json
+
+
+#Any other OS
+
+Run 
+
+mvn package
+java -cp target/fleet-management-service-1.0-jar-with-dependencies.jar de.apeglow.fleetmanagement.service.FleetmanagementServiceApplication /home/apeglow/git/fleet-management-service/src/test/resources/example1.json
+
+java -cp target/fleet-management-service-1.0-jar-with-dependencies.jar de.apeglow.fleetmanagement.service.FleetmanagementServiceApplication /home/apeglow/git/fleet-management-service/src/test/resources/example2.json
+
+
+
+
+# task
+
 You are given a []int scooters, which has as many elements as there are
 
 districts in Berlin that Coup operates in. For each i, scooters[i] is the
