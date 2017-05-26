@@ -3,6 +3,7 @@ package de.apeglow.fleetmanagement.service;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
 
 import com.google.gson.Gson;
 
@@ -15,13 +16,17 @@ public class FleetmanagementServiceApplication {
 		
 		
 		Gson gson = new Gson();
-		Request request = gson.fromJson(new FileReader(new File(args[0])), Request.class);
 		
-		FleetmanagementService fleetmanagementService = new FleetmanagementService();
-		
-		int numberOfEngineers = fleetmanagementService.calculateRequiredNumberOfFleetEngineers(request.getScooters(), request.getC(), request.getP());
-		
-		System.out.println(gson.toJson(new Response(numberOfEngineers)));
+		try (Reader inputFileReader = new FileReader(new File(args[0]))) {
+			
+			Request request = gson.fromJson(inputFileReader, Request.class);
+			
+			FleetmanagementService fleetmanagementService = new FleetmanagementService();
+			
+			int numberOfEngineers = fleetmanagementService.calculateRequiredNumberOfFleetEngineers(request.getScooters(), request.getC(), request.getP());
+			
+			System.out.println(gson.toJson(new Response(numberOfEngineers)));
+		}
 		
 	}
 
