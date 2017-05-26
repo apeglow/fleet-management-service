@@ -1,0 +1,6 @@
+#!/bin/bash
+
+INPUTFILE=$1
+
+mvn package
+java -cp target/fleet-management-service-1.0-jar-with-dependencies.jar de.apeglow.fleetmanagement.service.FleetmanagementServiceApplication $INPUTFILE
