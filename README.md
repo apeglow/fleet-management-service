@@ -9,7 +9,7 @@
 
 ### Linux
 
-After checkout you fill find an executable named *fleetmanagement* in the root folder. 
+After checkout you fill find an executable named __fleetmanagement__ in the root folder. 
 
 ./fleetmanagement src/test/resources/example1.json
 ./fleetmanagement src/test/resources/example2.json
