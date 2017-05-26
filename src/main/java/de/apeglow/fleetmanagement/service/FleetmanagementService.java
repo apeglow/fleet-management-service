@@ -7,7 +7,7 @@ public class FleetmanagementService {
 	
 	
 	/**
-	 * Caluclates the number of required fleet engineers.
+	 * Calculates the number of required fleet engineers.
 	 * 
 	 * @param numberOfScootersPerDistrict
 	 * @param numberOfScootersMaintainableByFM
@@ -21,14 +21,14 @@ public class FleetmanagementService {
 		
 		/*
 		 * This logic here finds out to which district we should assign the FM to in order to reduce the number of additional fleet engineers to
-		 * the minimum. One could think it's the biggest district but that's not so.
+		 * the minimum.
 		 * 
 		 * Example: District 1 has 3 scooters
 		 * 			District 2 has 4 scooters
 		 * 			FM can handle 3 scooters
 		 * 			FE can handle 2 scooters
 		 * 
-		 * -> We better assign FM to district 1
+		 * -> We should assign FM to district 1
 		 * 
 		 */
 		int[] numberOfSavedEngineers = new int[numberOfScootersPerDistrict.length];
